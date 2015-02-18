@@ -31,7 +31,7 @@ Target Audience Characteristics
 (Super)Rough Sketch
 ===
 ![Power
-Reaper](https://github.com/pauldd91/DMGY9103-MobileApps-SP15/tree/master/textbook_work/paul_dariye/img/powerreaper.jpg "Power Reaper")
+Reaper](https://github.com/pauldd91/DMGY9103-MobileApps-SP15/blob/master/textbook_work/paul_dariye/homework/img/powerreaper.jpg "Power Reaper")
 
 
 
