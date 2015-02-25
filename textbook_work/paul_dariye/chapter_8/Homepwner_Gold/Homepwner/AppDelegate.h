@@ -12,6 +12,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+// Gold Challenge
+@property(nonatomic, readwrite, retain) UIView *backgroundView;
+
 
 @end
 

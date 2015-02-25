@@ -30,63 +30,43 @@
     
 }
 
+
 - (instancetype)initWithStyle:(UITableViewStyle)style
 {
     // override the superclass's designated initializer
     return [self init];
 }
 
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//    return [[[BNRItemStore sharedStore] allItems] count];
-//}
 
-
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-////    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
-//    // Get a new or recycled cell
-//
-//    
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
-//    
-//    
-//    
-//    
-//    NSArray *items = [[BNRItemStore sharedStore] allItems];
-//    BNRItem *item = items[indexPath.row];
-//    
-//    cell.textLabel.text = [item description];
-//    
-//    return cell;
-//}
-
+// -------------------------------------------------------------------------------
+//	viewDidLoad
+// -------------------------------------------------------------------------------
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    
+    // Add 20pts space at the top (think padding or margin)
+    UIEdgeInsets inset = UIEdgeInsetsMake(20, 0, 0, 0);
+    self.tableView.contentInset = inset;
 }
 
-/* ===========================================================
-    
-                Bronze Challenge:
-     1. Create two sections in table view
-     2. Then add two titles for eact section
-     3. Make sure that number of rows in each section correspond to # items
-     4. Populate items under each section by sorting by price
-
- 
- ============================================================= */
 
 
-// Return umber of sections
+// -------------------------------------------------------------------------------
+//	tableView:numberOfSectionsInTableView:
+// -------------------------------------------------------------------------------
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Set number of sections to 2
     return 2;
 }
 
-// Set section headers
+// -------------------------------------------------------------------------------
+//	tableView:titleForHeaderInSection:
+// -------------------------------------------------------------------------------
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     // Define array with section headers
@@ -96,7 +76,9 @@
     return [sectionHeaderTitles objectAtIndex:section];
 }
 
-// Return appropriate number of rows for each section
+// -------------------------------------------------------------------------------
+//	tableView:numberOfRowsInSection:
+// -------------------------------------------------------------------------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
@@ -128,91 +110,11 @@
     }
 }
 
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    //    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
-//    // Get a new or recycled cell
-//    
-//    
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
-//    
-//    
-//    
-//    // Filter > 50
-//    NSPredicate *greaterThanFifty = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
-//        BNRItem *value = (BNRItem *)evaluatedObject;
-//        
-//        return value.valueInDollars > 50;
-//    }];
-//    
-//    // Filter < 50
-//    NSPredicate *lessThanFifty = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
-//        BNRItem *value = (BNRItem *)evaluatedObject;
-//        
-//        return value.valueInDollars < 50;
-//    }];
-//    
-//    NSInteger totalRow = [tableView numberOfRowsInSection:indexPath.section];
-//
-//    switch (indexPath.section) {
-//        case 0:
-//        {
-//            // assign cell item text at indexPath.row
-//            cell.textLabel.text = [[[[BNRItemStore sharedStore] allItems] filteredArrayUsingPredicate:greaterThanFifty][indexPath.row] description];
-//
-//
-//            break;
-//        }
-//        case 1:
-//        {
-//            // assingn cell item text at indexPath.row
-//            cell.textLabel.text =[[[[BNRItemStore sharedStore] allItems] filteredArrayUsingPredicate:lessThanFifty][indexPath.row] description];
-//            // check if last row of table
-//            if (indexPath.row == totalRow - 1) {
-//                // set label text to 'No More Items'
-//                cell.textLabel.text = @"No more items!";
-//            }
-//
-//            break;
-//        }
-//        default:
-//            break;
-//    }
-//
-////    
-////    NSInteger row = [indexPath row];
-////    
-////    if (row == [[[BNRItemStore sharedStore] allItems] count]) {
-//////        cell.textLabel.text = @"No More Items";
-////        cell.textLabel.text = [self.tableView ]
-////        
-//////        [self.tableView insertRowsAtIndexPaths: withRowAnimation:<#(UITableViewRowAnimation)#>]
-////        
-////        
-////    }
-////    
-////    NSArray *items = [[BNRItemStore sharedStore] allItems];
-////    BNRItem *item = items[indexPath.row];
-//    
-//    
-//    return cell;
-//}
 
 
-/* ================================================
- 
- Silver Challenge:
- Append last row with 'No more items'
- 
- 1. find the last row
- 2. Add text 'No more items'
- 
- 
- ================================================== */
-
-// Find out number of rows in table view
-
+// -------------------------------------------------------------------------------
+//	tableView:cellForRowAtIndexPath:
+// -------------------------------------------------------------------------------
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
@@ -282,6 +184,10 @@
  3. Make image background of UITableView
  
  */
+
+// -------------------------------------------------------------------------------
+//	tableView:heightForRowAtIndexPath:
+// -------------------------------------------------------------------------------
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
