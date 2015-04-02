@@ -35,7 +35,19 @@
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
     
+    _counters = [[NSMutableArray alloc] init];
+    
+    Counter *counter1 = [[Counter alloc]init];
+    counter1.counterName = @"Coffee";
+    
+    Counter *counter2 = [[Counter alloc]init];
+    counter2.counterName = @"Miles";
+    
+    [_counters addObject:counter1];
+    [_counters addObject:counter2];
+    
 }
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -45,55 +57,42 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return [_counters count];
 }
 
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//    return 2;
-//}
+- (instancetype)initWithStyle:(UITableViewCellStyle)style
+{
+    return [self init];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
     
-    NSMutableArray *counters = [[NSMutableArray alloc] init];
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
     
-    Counter *counter1 = [[Counter alloc]init];
-    counter1.counterName = @"Coffee";
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"UITableViewCell"];
     
-    Counter *counter2 = [[Counter alloc]init];
-    counter2.counterName = @"Miles";
-    
-    [counters addObject:counter1];
-    [counters addObject:counter2];
-    
-    Counter *ctr = counters[indexPath.row];
+    Counter *ctr = _counters[indexPath.row];
     
     cell.textLabel.text = ctr.counterName;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%i",ctr.count];
+    cell.detailTextLabel.textAlignment = UITextAlignmentRight;
     
     return cell;
 }
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-////    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
-////    
-////    Counter *counter1 = [[Counter alloc] init];
-////    counter1.counterName = @"Coffee";
-////    
-////    Counter *counter2 = [[Counter alloc] init];
-////    counter2.counterName = @"Miles";
-////    
-////    NSMutableArray *counters = [[NSMutableArray alloc] init];
-////    [counters addObject:counter1];
-////    [counters addObject:counter2];
-////    
-////    Counter *ctr = counters[indexPath.row];
-////    
-////    cell.textLabel.text = @"sdlfjsdlfkj";
-////    
-////    return cell;
-//}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CounterViewController *cvc = [[CounterViewController alloc]init];
+    
+    Counter *ctr = _counters[indexPath.row];
+    
+    NSLog(@"index %i", indexPath.row);
+    
+    cvc.item = ctr;
+    
+    [self.navigationController pushViewController:cvc animated:YES];
+}
 
 - (void)addNewItem
 {

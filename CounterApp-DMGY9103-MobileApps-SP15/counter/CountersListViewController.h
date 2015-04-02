@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "CounterViewController.h"
 
 @interface CountersListViewController : UITableViewController
+
+@property NSMutableArray *counters;
 
 - (void) addNewItem;
 

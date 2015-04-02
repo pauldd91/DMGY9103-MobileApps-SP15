@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class Counter;
+
 
 @interface CounterViewController : UIViewController
 
+@property (nonatomic, strong) Counter *item;
 
 @end
 
