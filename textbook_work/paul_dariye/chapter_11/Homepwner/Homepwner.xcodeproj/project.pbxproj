@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7606AC431AC38F2E0076F05D /* BNRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7606AC421AC38F2E0076F05D /* BNRImageStore.m */; };
 		76AF9FED1ABFBB1900991932 /* BNRDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76AF9FEB1ABFBB1900991932 /* BNRDetailViewController.m */; };
 		76AF9FEE1ABFBB1900991932 /* BNRDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76AF9FEC1ABFBB1900991932 /* BNRDetailViewController.xib */; };
 		76E0F7811ABF3A7E00A08A67 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E0F7801ABF3A7E00A08A67 /* HeaderView.xib */; };
@@ -32,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7606AC411AC38F2E0076F05D /* BNRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageStore.h; sourceTree = "<group>"; };
+		7606AC421AC38F2E0076F05D /* BNRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageStore.m; sourceTree = "<group>"; };
 		76AF9FEA1ABFBB1900991932 /* BNRDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRDetailViewController.h; sourceTree = "<group>"; };
 		76AF9FEB1ABFBB1900991932 /* BNRDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRDetailViewController.m; sourceTree = "<group>"; };
 		76AF9FEC1ABFBB1900991932 /* BNRDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRDetailViewController.xib; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				7874E6061A9D482100027458 /* AppDelegate.m */,
 				76AF9FEA1ABFBB1900991932 /* BNRDetailViewController.h */,
 				76AF9FEB1ABFBB1900991932 /* BNRDetailViewController.m */,
+				7606AC411AC38F2E0076F05D /* BNRImageStore.h */,
+				7606AC421AC38F2E0076F05D /* BNRImageStore.m */,
 				76AF9FEC1ABFBB1900991932 /* BNRDetailViewController.xib */,
 				7874E6081A9D482100027458 /* ViewController.h */,
 				7874E6091A9D482100027458 /* ViewController.m */,
@@ -249,6 +254,7 @@
 				7874E6071A9D482100027458 /* AppDelegate.m in Sources */,
 				7874E62C1A9D4DE100027458 /* BNRItem.m in Sources */,
 				76AF9FED1ABFBB1900991932 /* BNRDetailViewController.m in Sources */,
+				7606AC431AC38F2E0076F05D /* BNRImageStore.m in Sources */,
 				7874E6291A9D4A3000027458 /* BNRItemsViewController.m in Sources */,
 				7874E6041A9D482100027458 /* main.m in Sources */,
 				7874E62F1A9D5EEF00027458 /* BNRItemStore.m in Sources */,

@@ -11,6 +11,7 @@
 @interface Counter : NSObject
 
 @property (nonatomic) int count;
+@property (nonatomic) NSString *counterName;
 
 - (void)incrementCount;
 - (void)decrementCount;

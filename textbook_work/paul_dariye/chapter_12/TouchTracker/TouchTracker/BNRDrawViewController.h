@@ -6,8 +6,11 @@
 //  Copyright (c) 2015 Big Nerd Ranch. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+
 #import <Foundation/Foundation.h>
 
-@interface BNRDrawViewController : NSObject
+@interface BNRDrawViewController : UIViewController
+
 
 @end

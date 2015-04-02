@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		76261F511ACCB6B200DF082F /* Counter.m in Sources */ = {isa = PBXBuildFile; fileRef = 76261F501ACCB6B200DF082F /* Counter.m */; };
+		76261F541ACCBFBF00DF082F /* CountersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76261F531ACCBFBF00DF082F /* CountersListViewController.m */; };
 		83F3A2121ACADEBC00B6EC97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F3A2111ACADEBC00B6EC97 /* main.m */; };
 		83F3A2151ACADEBC00B6EC97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F3A2141ACADEBC00B6EC97 /* AppDelegate.m */; };
 		83F3A2181ACADEBC00B6EC97 /* CounterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F3A2171ACADEBC00B6EC97 /* CounterViewController.m */; };
@@ -30,6 +31,8 @@
 /* Begin PBXFileReference section */
 		76261F4F1ACCB6B200DF082F /* Counter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Counter.h; sourceTree = "<group>"; };
 		76261F501ACCB6B200DF082F /* Counter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Counter.m; sourceTree = "<group>"; };
+		76261F521ACCBFBF00DF082F /* CountersListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountersListViewController.h; sourceTree = "<group>"; };
+		76261F531ACCBFBF00DF082F /* CountersListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountersListViewController.m; sourceTree = "<group>"; };
 		83F3A20C1ACADEBC00B6EC97 /* counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = counter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F3A2101ACADEBC00B6EC97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83F3A2111ACADEBC00B6EC97 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,6 +92,8 @@
 				83F3A2161ACADEBC00B6EC97 /* CounterViewController.h */,
 				76261F4F1ACCB6B200DF082F /* Counter.h */,
 				76261F501ACCB6B200DF082F /* Counter.m */,
+				76261F521ACCBFBF00DF082F /* CountersListViewController.h */,
+				76261F531ACCBFBF00DF082F /* CountersListViewController.m */,
 				83F3A2171ACADEBC00B6EC97 /* CounterViewController.m */,
 				83F3A2351ACC98FE00B6EC97 /* CounterViewController.xib */,
 				83F3A21C1ACADEBC00B6EC97 /* Images.xcassets */,
@@ -226,6 +231,7 @@
 			files = (
 				76261F511ACCB6B200DF082F /* Counter.m in Sources */,
 				83F3A2181ACADEBC00B6EC97 /* CounterViewController.m in Sources */,
+				76261F541ACCBFBF00DF082F /* CountersListViewController.m in Sources */,
 				83F3A2151ACADEBC00B6EC97 /* AppDelegate.m in Sources */,
 				83F3A2121ACADEBC00B6EC97 /* main.m in Sources */,
 			);

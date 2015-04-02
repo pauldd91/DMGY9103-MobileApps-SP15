@@ -9,13 +9,23 @@
 #import <Foundation/Foundation.h>
 
 @interface BNRItem : NSObject
-
 {
     NSString *_itemName;
     NSString *_serialNumber;
     int _valueInDollars;
     NSDate *_dateCreated;
+    
 }
+
+//@property (nonatomic, copy) NSString *itemName;
+//@property (nonatomic, copy) NSString *serialNumber;
+//@property (nonatomic) int valueInDollars;
+//@property (nonatomic, readonly, strong) NSDate *dateCreated;
+
+@property (nonatomic, copy) NSString *itemKey;
+
+    
+
 
 /* ===================================
             Class Methods

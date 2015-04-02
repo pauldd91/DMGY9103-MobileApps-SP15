@@ -7,10 +7,10 @@
 //
 
 #import "BNRDetailViewController.h"
-
 #import "BNRItem.h"
+#import "BNRImageStore.h"
 
-@interface BNRDetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface BNRDetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate>
 
 
 
@@ -30,6 +30,12 @@
 
 
 @implementation BNRDetailViewController
+
+- (IBAction)backgroundTapped:(id)sender
+{
+    [self.view endEditing:YES];
+}
+
 - (IBAction)takePicture:(id)sender {
     
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
@@ -53,6 +59,9 @@
     // Get picked image from destination
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     
+    // Store the image in the BNRImageStore
+    [[BNRImageStore sharedStore] setImage:image forKey:self.item.itemKey];
+    
     // Put selected image onto the screen in image view
     self.imageView.image = image;
     
@@ -60,9 +69,9 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
     
     BNRItem *item = self.item;
     
@@ -85,6 +94,14 @@
     // Use filtered NSDate object to set dateLabel
     
     self.dateLabel.text = [dateFormatter stringFromDate:item.dateCreated];
+    
+    NSString *imageKey = self.item.itemKey;
+    
+    UIImage *imageToDiplay = [[BNRImageStore sharedStore] imageForKey:imageKey];
+    self.imageView.image = imageToDiplay;
+    
+    // Get
+    
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -106,6 +123,13 @@
     _item = item;
     self.navigationItem.title = _item.itemName;
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 
 
 //- (IBAction)takePicture:(id)sender {

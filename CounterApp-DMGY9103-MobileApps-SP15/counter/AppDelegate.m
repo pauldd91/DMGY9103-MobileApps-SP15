@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "CounterViewController.h"
+#import "CountersListViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,9 +22,14 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    UIViewController* initialViewController = [[CounterViewController alloc] initWithNibName:@"CounterViewController" bundle:nil];
+    //UIViewController* initialViewController = [[CounterViewController alloc] initWithNibName:@"CounterViewController" bundle:nil];
     
-    self.window.rootViewController = initialViewController;
+
+    UIViewController* cl = [[CountersListViewController alloc] init];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:cl];
+    
+    self.window.rootViewController = navController;
 
     [self.window makeKeyAndVisible];
 
