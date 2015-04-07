@@ -38,4 +38,12 @@ Note: *Theaters will use a webportal for screening entries before the standalone
 - Students and low-income earners
 - Regular movie goers
 
+# Feature Review
 
+- *Discover screenings*
+- *Watch trailers and read movie information*
+- *Link to RSVP*
+
+# User flow
+ 
+ Open App --> 
